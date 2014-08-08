@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Xdialog的demo</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.0/css/dpl/base-min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>论语学而篇第一</h1>
+        <p>子曰：「学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知，而不愠，不亦君子乎？」</p>
+        <p>孔子说：「学了又时常温习和练习，不是很愉快吗？有志同道合的人从远方来，不是很令人高兴的吗？人家不了解我，我也不怨恨、恼怒，不也是一个有德的君子吗？」</p>
+        <p><a href="#" id="delete">点击弹窗</a></p>
+    </div>
+
+<script>
+    var S = KISSY;
+    S.config({
+        packages:[
+            {
+                name:"kg",
+                path:"http://g.tbcdn.cn/kg/",
+                charset:"utf-8",
+                ignorePackageNameInUri:true
+            }
+        ]
+    });
+
+    if (S.Config.debug) {
+        var srcPath = "../";
+        S.config({
+            packages:[
+                {
+                    name:"kg/xdialog/1.0.0",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('kg/xdialog/1.0.0/index', function (S, xDialog) {
+        S.Node.one('#delete').on('click', function (e) {
+            e.preventDefault();
+            var box = new xDialog({
+                // title : '确定删除',
+                // html  : '亲，你确定要执行删除命令吗？',
+                action: function () {
+                    console.log('you clicked yes!')
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

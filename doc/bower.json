@@ -1,0 +1,12 @@
+{
+    "name": "xdialog",
+    "version": "1.0.0",
+    "main": "index.js",
+    "ignore": [
+        "**/*",
+        "!index.js",
+        "!lib/**/*"
+    ],
+    "dependencies": {
+    }
+}
