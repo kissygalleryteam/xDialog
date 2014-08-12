@@ -1,6 +1,6 @@
 {
-    "name": "xDialog",
-    "version": "1.1",
+    "name": "xdialog",
+    "version": "1.0.0",
     "main": "index.js",
     "ignore": [
         "**/*",

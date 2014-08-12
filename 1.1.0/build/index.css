@@ -6,33 +6,27 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: -150px 0 0 -190px;
-  width: 380px;
+  margin: -150px 0 0 -180px;
+  padding: 5px;
+  width: 340px;
   z-index: 99;
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   border-radius: 3px;
 }
-.dialog-header {
-  padding: 15px;
-}
 .dialog-content {
-  margin-bottom: 0.8em;
-  padding: 0 15px 0 15px;
+  padding: 10px;
 }
 .dialog-header h3 {
-  margin: 0;
+  margin: 0 0 0.8em 0;
 }
-.dialog-content h4,
-.dialog-content p {
+.dialog-body h4,
+.dialog-body p {
   margin: 0 0 0.8em 0;
 }
 .dialog-footer {
-  padding: 10px 30px;
-}
-.dialog-footer {
-  text-align: right;
-  background-color: #f2f2f2;
+  margin-top: 1.5em;
+  text-align: center;
 }
 .dialog-footer button {
   margin: 0;
@@ -41,25 +35,16 @@
   font-family: sans-serif;
   text-align: center;
   border-radius: 2px;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
-.dialog-footer .yes {
-  border-color: #3498db;
+  border: 1px solid #3498db;
   background-color: #3498db;
   color: #fff;
+  cursor: pointer;
 }
-.dialog-footer .yes:hover {
-  border-color: #2980b9;
+.dialog-footer button:hover {
+  background-color: #2980b9;
 }
-.dialog-footer .no {
+.dialog-footer button:not(last-child) {
   margin-right: 20px;
-  border-color: #ccc;
-  background-color: #f2f2f2;
-  color: #333;
-}
-.dialog-footer .no:hover {
-  border-color: #999;
 }
 .dialog-overlay {
   position: absolute;

@@ -5,7 +5,6 @@
  **/
 KISSY.add(function (S, Node, Base, Event) {
 
-    var version = '1.0.0';
     /* 组件默认配置项 */
     var defaults = {
         title : '你确定要执行吗',
@@ -23,21 +22,21 @@ KISSY.add(function (S, Node, Base, Event) {
         init: function () {
             var self = this;
 
-            var template = '<div class="dialog-overlay"></div><div class="dialog-popup"></div>';
+            var template = '<div class="dialog-overlay"></div><div class="dialog-popup"><div class="dialog-content"></div></div>';
 
             Node.one('.container').addClass('dialog-overlay-blur');
 
             S.DOM.insertAfter(S.DOM.create(template), '.container');
-            var dialog = Node.one('.dialog-popup');
+            var dialog = Node.one('.dialog-content');
 
             if (self.options['title']) {
                 dialog.append('<div class="dialog-header"><h3>' + self.options['title'] +'</h3></div>');
             }
             if (self.options['html']) {
-                dialog.append('<div class="dialog-content">' + self.options['html'] +'</div>');
+                dialog.append('<div class="dialog-body">' + self.options['html'] +'</div>');
             }
 
-            dialog.append('<div class="dialog-footer"><button class="no">\u53d6\u6d88</button><button class="yes">\u786e\u5b9a</button></div>');
+            dialog.append('<div class="dialog-footer"><button class="yes">\u786e\u5b9a</button><button class="no">\u53d6\u6d88</button></div>');
 
             /* 处理事件模块 */
             self.bindEvent();
